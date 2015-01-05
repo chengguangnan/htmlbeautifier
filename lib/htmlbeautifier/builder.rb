@@ -27,7 +27,8 @@ module HtmlBeautifier
 
     def outdent
       @level -= 1
-      raise "Outdented too far" if @level < 0
+#      raise "Outdented too far" if @level < 0
+      @level = 0 if @level < 0
     end
 
     def emit(s)
